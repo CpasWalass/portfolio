@@ -94,8 +94,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgb(239, 68, 68)" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: grid
-            ve 20s linear infinite;
+            animation: gridMove 20s linear infinite;
             pointer-events: none;
         }
 
@@ -218,6 +217,22 @@
             top: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(15, 15, 35, 0.98);
+            box-shadow: 0 8px 40px rgba(239, 68, 68, 0.2);
+        }
+
+        nav .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         nav ul {
@@ -225,6 +240,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            margin: 0;
         }
 
         nav li {
@@ -239,6 +255,10 @@
             font-weight: 500;
             position: relative;
             transition: all 0.3s ease;
+        }
+
+        nav.scrolled a {
+            padding: 0.7rem 0;
         }
 
         nav a:hover {
@@ -260,6 +280,33 @@
 
         nav a:hover::after {
             width: 100%;
+        }
+
+        /* PDF Download Button */
+        .pdf-download-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .pdf-download-btn:hover {
+            background: var(--gradient-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+        }
+
+        .pdf-download-btn i {
+            font-size: 1rem;
         }
 
         /* Sections */
@@ -729,13 +776,40 @@
                 font-size: 3rem;
             }
 
+            nav .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             nav ul {
                 flex-direction: column;
                 text-align: center;
+                width: 100%;
             }
 
             nav li {
                 margin: 0;
+            }
+
+            nav.scrolled .nav-content {
+                flex-direction: row;
+                gap: 0;
+            }
+
+            nav.scrolled ul {
+                flex-direction: row;
+                overflow-x: auto;
+                padding: 0 1rem;
+            }
+
+            nav.scrolled li {
+                margin: 0 0.5rem;
+                white-space: nowrap;
+            }
+
+            .pdf-download-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
             }
 
             .section-title h2 {
@@ -790,8 +864,8 @@
         </div>
     </header>
 
-    <nav>
-        <div class="container">
+    <nav id="navbar">
+        <div class="nav-content">
             <ul>
                 <li><a href="#education">Formation</a></li>
                 <li><a href="#skills">Compétences</a></li>
@@ -799,6 +873,10 @@
                 <li><a href="#activities">Activités</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="pdf-download-btn" onclick="generatePDF()">
+                <i class="fas fa-download"></i>
+                Télécharger CV
+            </button>
         </div>
     </nav>
 
@@ -1079,6 +1157,22 @@
     </footer>
 
     <script>
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScrollY = window.scrollY;
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
         // Smooth scrolling for navigation
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1113,11 +1207,242 @@
             });
         });
 
+        // PDF Generation Function
+        function generatePDF() {
+            // Show loading indicator
+            const btn = document.querySelector('.pdf-download-btn');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Génération...';
+            btn.disabled = true;
+
+            // Create a simplified version for PDF
+            const pdfContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>CV - LAWADAN KODJO WULFRED GOMESE ELOM</title>
+                    <style>
+                        * { margin: 0; padding: 0; box-sizing: border-box; }
+                        body { 
+                            font-family: Arial, sans-serif; 
+                            font-size: 11px; 
+                            line-height: 1.4; 
+                            color: #333;
+                            padding: 20px;
+                        }
+                        .header { 
+                            text-align: center; 
+                            margin-bottom: 20px; 
+                            border-bottom: 2px solid #ef4444;
+                            padding-bottom: 15px;
+                        }
+                        .name { 
+                            font-size: 18px; 
+                            font-weight: bold; 
+                            color: #ef4444; 
+                            margin-bottom: 5px;
+                        }
+                        .title { 
+                            font-size: 12px; 
+                            color: #666; 
+                            margin-bottom: 8px;
+                        }
+                        .contact { 
+                            font-size: 9px; 
+                            color: #888; 
+                        }
+                        .section { 
+                            margin-bottom: 18px; 
+                        }
+                        .section-title { 
+                            font-size: 13px; 
+                            font-weight: bold; 
+                            color: #ef4444; 
+                            margin-bottom: 8px; 
+                            border-left: 3px solid #ef4444;
+                            padding-left: 8px;
+                        }
+                        .item { 
+                            margin-bottom: 8px; 
+                        }
+                        .item-title { 
+                            font-weight: bold; 
+                            font-size: 11px;
+                        }
+                        .item-period { 
+                            font-size: 9px; 
+                            color: #666; 
+                            font-style: italic;
+                        }
+                        .item-desc { 
+                            font-size: 10px; 
+                            margin-top: 2px;
+                        }
+                        .skills-grid { 
+                            display: grid; 
+                            grid-template-columns: 1fr 1fr; 
+                            gap: 10px; 
+                        }
+                        .skill-category { 
+                            font-size: 10px; 
+                        }
+                        .skill-title { 
+                            font-weight: bold; 
+                            color: #ef4444; 
+                            margin-bottom: 3px;
+                        }
+                        .skills { 
+                            color: #666; 
+                        }
+                        .projects { 
+                            display: grid; 
+                            grid-template-columns: 1fr 1fr; 
+                            gap: 8px; 
+                        }
+                        .project { 
+                            font-size: 9px; 
+                        }
+                        .project-name { 
+                            font-weight: bold; 
+                            color: #ef4444;
+                        }
+                        .two-column { 
+                            display: grid; 
+                            grid-template-columns: 1fr 1fr; 
+                            gap: 15px; 
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <div class="name">LAWADAN KODJO WULFRED GOMESE ELOM</div>
+                        <div class="title">Développeur Full-Stack & Analyste de Données</div>
+                        <div class="contact">
+                            📧 walasslawadan@gmail.com | 📱 +228 98 82 00 81 | 💼 LinkedIn: @walass-lawadan | 📍 Lomé, Togo
+                        </div>
+                    </div>
+
+                    <div class="two-column">
+                        <div>
+                            <div class="section">
+                                <div class="section-title">FORMATION & EXPÉRIENCE</div>
+                                <div class="item">
+                                    <div class="item-title">Stage - Développeur Full-Stack</div>
+                                    <div class="item-period">23 Juin - 16 Août 2025 | Groupe Atakora SARL</div>
+                                    <div class="item-desc">Développement d'un système modulaire de gestion de microfinance en Laravel.</div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-title">2ème Année - Institut Africain d'Informatique</div>
+                                    <div class="item-period">2024 - 2025</div>
+                                    <div class="item-desc">Développement logiciel, bases de données avancées, conception SI.</div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-title">1ère Année - Institut Africain d'Informatique</div>
+                                    <div class="item-period">2023 - 2024</div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-title">Baccalauréat Série D</div>
+                                    <div class="item-period">2023</div>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                <div class="section-title">PROJETS RÉALISÉS</div>
+                                <div class="projects">
+                                    <div class="project">
+                                        <div class="project-name">Système de Gestion de Microfinance</div>
+                                        <div>Laravel, PHP, MySQL</div>
+                                    </div>
+                                    <div class="project">
+                                        <div class="project-name">Site E-commerce</div>
+                                        <div>Laravel, PHP, MySQL</div>
+                                    </div>
+                                    <div class="project">
+                                        <div class="project-name">MiniMarket App</div>
+                                        <div>Flutter, Dart, Firebase</div>
+                                    </div>
+                                    <div class="project">
+                                        <div class="project-name">ThirdLine Game</div>
+                                        <div>Flutter, Dart</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="section">
+                                <div class="section-title">COMPÉTENCES TECHNIQUES</div>
+                                <div class="skills-grid">
+                                    <div class="skill-category">
+                                        <div class="skill-title">Développement Web</div>
+                                        <div class="skills">PHP, Laravel, Python, Flask, HTML/CSS/JS</div>
+                                    </div>
+                                    <div class="skill-category">
+                                        <div class="skill-title">Développement Mobile</div>
+                                        <div class="skills">Flutter, Dart, Applications Android</div>
+                                    </div>
+                                    <div class="skill-category">
+                                        <div class="skill-title">Bases de Données</div>
+                                        <div class="skills">MySQL, Odoo Community, Conception BDD</div>
+                                    </div>
+                                    <div class="skill-category">
+                                        <div class="skill-title">Langages</div>
+                                        <div class="skills">Java, C, Python, PHP</div>
+                                    </div>
+                                    <div class="skill-category">
+                                        <div class="skill-title">Analyse & Conception</div>
+                                        <div class="skills">Merise, UML, Systèmes d'Information</div>
+                                    </div>
+                                    <div class="skill-category">
+                                        <div class="skill-title">Design</div>
+                                        <div class="skills">Figma, UI/UX Design</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                <div class="section-title">ACTIVITÉS EXTRACURRICULAIRES</div>
+                                <div class="item">
+                                    <div class="item-title">Club de Génie en Herbe IAI</div>
+                                    <div class="item-desc">Responsable du club - BAPTISMUS, Génie Campus</div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-title">Club d'Art Oratoire</div>
+                                    <div class="item-desc">Concours universitaire, Orathon Génie des lycées</div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-title">Groupes Organisés</div>
+                                    <div class="item-desc">Membre LGD et Holystar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `;
+
+            // Create a new window for PDF generation
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(pdfContent);
+            printWindow.document.close();
+
+            // Wait a bit for content to load then trigger print
+            setTimeout(() => {
+                printWindow.print();
+                printWindow.close();
+                
+                // Restore button
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+            }, 500);
+        }
+
         // Photo upload functionality
         const photoInput = document.getElementById('photoInput');
         const profilePhoto = document.getElementById('profilePhoto');
 
-        photoInput.addEventListener('change', function(e) {
+        photoInput && photoInput.addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
@@ -1233,7 +1558,7 @@
             }
         });
 
-        // Enhanced typing effect for the title
+        
         function typeWriter(element, text, speed = 100) {
             element.innerHTML = '';
             let i = 0;
@@ -1250,34 +1575,35 @@
             typing();
         }
 
-        // Initialize typing effect after page load
+        
         window.addEventListener('load', () => {
             const title = document.querySelector('.hero h1');
             const originalText = title.textContent;
             typeWriter(title, originalText, 80);
         });
 
-        // Add loading screen
+        
         window.addEventListener('load', () => {
+            
             const loader = document.createElement('div');
-            loader.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: var(--dark);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 10000;
-                transition: opacity 0.5s ease;
-            `;
+            loader.id = 'loader-screen';
+            loader.style.position = 'fixed';
+            loader.style.top = '0';
+            loader.style.left = '0';
+            loader.style.width = '100vw';
+            loader.style.height = '100vh';
+            loader.style.background = 'var(--dark)';
+            loader.style.display = 'flex';
+            loader.style.alignItems = 'center';
+            loader.style.justifyContent = 'center';
+            loader.style.zIndex = '9999';
             loader.innerHTML = `
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; border: 3px solid var(--primary); border-radius: 50%; border-top: 3px solid transparent; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
-                    <p style="color: var(--primary); font-size: 1.2rem;">Chargement...</p>
+            <div style="text-align:center;">
+                <div style="margin-bottom:1.5rem;">
+                <i class="fas fa-spinner fa-spin" style="font-size:2.5rem;color:var(--primary);"></i>
                 </div>
+                <div style="color:var(--primary);font-size:1.2rem;font-weight:bold;">Chargement...</div>
+            </div>
             `;
             
             const spinStyle = document.createElement('style');
@@ -1289,15 +1615,20 @@
             `;
             document.head.appendChild(spinStyle);
             document.body.appendChild(loader);
+
             
             setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    if (loader.parentNode) {
-                        loader.parentNode.removeChild(loader);
-                    }
-                }, 500);
-            }, 1500);
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.6s';
+            setTimeout(() => {
+                loader.remove();
+            }, 600);
+            }, 1200);
+
+            
+            const title = document.querySelector('.hero h1');
+            const originalText = title.textContent;
+            typeWriter(title, originalText, 80);
         });
     </script>
 </body>
