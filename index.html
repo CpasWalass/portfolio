@@ -847,14 +847,7 @@
             opacity: 0;
             cursor: pointer;
         }
-        .social-links {
-        gap: 10px;
-    }
-    .social-links a {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
+        
     </style>
 </head>
 <body>
@@ -1234,210 +1227,275 @@
             btn.disabled = true;
 
             // Create a simplified version for PDF
-            const pdfContent = `
-                <!DOCTYPE html>
+            const pdfContent =
+            
+            
+            `
+            
+            <!DOCTYPE html>
                 <html>
                 <head>
                     <meta charset="UTF-8">
-                    <title>CV - LAWADAN KODJO WULFRED GOMESE ELOM</title>
+                     <title>CV - LAWADAN KODJO WULFRED GOMESE ELOM</title>
                     <style>
                         * { margin: 0; padding: 0; box-sizing: border-box; }
                         body { 
-                            font-family: Arial, sans-serif; 
-                            font-size: 11px; 
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                            font-size: 10px; 
                             line-height: 1.4; 
-                            color: #333;
-                            padding: 20px;
+                            color: #2c3e50;
+                            padding: 15px;
+                            background: #f8f7f6;
                         }
-                        .header { 
+                        .cv-container {
+                            max-width: 850px;
+                            margin: 0 auto;
+                            background: #faf9f8;
+                            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                            border-radius: 6px;
+                            overflow: hidden;
+                        }
+                    .header { 
                             text-align: center; 
-                            margin-bottom: 20px; 
-                            border-bottom: 2px solid #ef4444;
-                            padding-bottom: 15px;
-                        }
-                        .name { 
-                            font-size: 18px; 
-                            font-weight: bold; 
-                            color: #ef4444; 
-                            margin-bottom: 5px;
-                        }
-                        .title { 
-                            font-size: 12px; 
-                            color: #666; 
-                            margin-bottom: 8px;
-                        }
-                        .contact { 
-                            font-size: 9px; 
-                            color: #888; 
-                        }
-                        .section { 
-                            margin-bottom: 18px; 
-                        }
-                        .section-title { 
-                            font-size: 13px; 
-                            font-weight: bold; 
-                            color: #ef4444; 
-                            margin-bottom: 8px; 
-                            border-left: 3px solid #ef4444;
-                            padding-left: 8px;
-                        }
-                        .item { 
-                            margin-bottom: 8px; 
-                        }
-                        .item-title { 
-                            font-weight: bold; 
-                            font-size: 11px;
-                        }
-                        .item-period { 
-                            font-size: 9px; 
-                            color: #666; 
-                            font-style: italic;
-                        }
-                        .item-desc { 
-                            font-size: 10px; 
-                            margin-top: 2px;
-                        }
-                        .skills-grid { 
-                            display: grid; 
-                            grid-template-columns: 1fr 1fr; 
-                            gap: 10px; 
-                        }
-                        .skill-category { 
-                            font-size: 10px; 
-                        }
-                        .skill-title { 
-                            font-weight: bold; 
-                            color: #ef4444; 
-                            margin-bottom: 3px;
-                        }
-                        .skills { 
-                            color: #666; 
-                        }
-                        .projects { 
-                            display: grid; 
-                            grid-template-columns: 1fr 1fr; 
-                            gap: 8px; 
-                        }
-                        .project { 
-                            font-size: 9px; 
-                        }
-                        .project-name { 
-                            font-weight: bold; 
-                            color: #ef4444;
-                        }
-                        .two-column { 
-                            display: grid; 
-                            grid-template-columns: 1fr 1fr; 
-                            gap: 15px; 
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="header">
-                        <div class="name">LAWADAN KODJO WULFRED GOMESE ELOM</div>
-                        <div class="title">Développeur Full-Stack & Analyste de Données</div>
-                        <div class="contact">
-                            📧 walasslawadan@gmail.com | 📱 +228 98 82 00 81 | 💼 LinkedIn: @walass-lawadan | 📍 Lomé, Togo
+                        margin-bottom: 20px; 
+            background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+            color: white;
+            padding: 20px 15px;
+        }
+        .name { 
+            font-size: 20px; 
+            font-weight: 700; 
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+        .title { 
+            font-size: 14px; 
+            margin-bottom: 10px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        .contact { 
+            font-size: 9px; 
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section { 
+            margin-bottom: 16px; 
+            background: #f0efee;
+            padding: 14px;
+            border-radius: 4px;
+            border-left: 3px solid #b91c1c;
+        }
+        .section-title { 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: #b91c1c; 
+            margin-bottom: 10px; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .item { 
+            margin-bottom: 10px; 
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .item-title { 
+            font-weight: 600; 
+            font-size: 11px;
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+        .item-period { 
+            font-size: 9px; 
+            color: #6c757d; 
+            font-style: italic;
+            margin-bottom: 3px;
+        }
+        .item-desc { 
+            font-size: 10px; 
+            color: #495057;
+            line-height: 1.3;
+        }
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 8px; 
+        }
+        .skill-category { 
+            font-size: 9px; 
+            background: #faf9f8;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #e9ecef;
+        }
+        .skill-title { 
+            font-weight: 600; 
+            color: #b91c1c; 
+            margin-bottom: 4px;
+            font-size: 10px;
+        }
+        .skills { 
+            color: #495057;
+            line-height: 1.2;
+        }
+        .projects { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 8px; 
+        }
+        .project { 
+            font-size: 9px;
+            background: #faf9f8;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #e9ecef;
+        }
+        .project-name { 
+            font-weight: 600; 
+            color: #b91c1c;
+            margin-bottom: 3px;
+            font-size: 10px;
+        }
+        .two-column { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 18px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <div class="name">LAWADAN KODJO WULFRED GOMESE ELOM</div>
+            <div class="title">Développeur Full-Stack & Analyste de Données</div>
+            <div class="contact">
+                📧 walasslawadan@gmail.com | 📱 +228 98 82 00 81 | 💼 LinkedIn: @walass-lawadan | 📍 Lomé, Togo
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="two-column">
+                <div>
+                    <div class="section">
+                        <div class="section-title">Formation & Expérience</div>
+                        <div class="item">
+                            <div class="item-title">Stage - Développeur Full-Stack</div>
+                            <div class="item-period">23 Juin - 16 Août 2025 | Groupe Atakora SARL</div>
+                            <div class="item-desc">Développement d'un système modulaire de gestion de microfinance en Laravel.</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title">2ème Année - Institut Africain d'Informatique</div>
+                            <div class="item-period">2024 - 2025</div>
+                            <div class="item-desc">Développement logiciel, bases de données, conception SI.</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title">1ère Année - Institut Africain d'Informatique</div>
+                            <div class="item-period">2023 - 2024</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title">Baccalauréat Série D</div>
+                            <div class="item-period">2023</div>
                         </div>
                     </div>
 
-                    <div class="two-column">
-                        <div>
-                            <div class="section">
-                                <div class="section-title">FORMATION & EXPÉRIENCE</div>
-                                <div class="item">
-                                    <div class="item-title">Stage - Développeur Full-Stack</div>
-                                    <div class="item-period">23 Juin - 16 Août 2025 | Groupe Atakora SARL</div>
-                                    <div class="item-desc">Développement d'un système modulaire de gestion de microfinance en Laravel.</div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-title">2ème Année - Institut Africain d'Informatique</div>
-                                    <div class="item-period">2024 - 2025</div>
-                                    <div class="item-desc">Développement logiciel, bases de données avancées, conception SI.</div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-title">1ère Année - Institut Africain d'Informatique</div>
-                                    <div class="item-period">2023 - 2024</div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-title">Baccalauréat Série D</div>
-                                    <div class="item-period">2023</div>
-                                </div>
+                    <div class="section">
+                        <div class="section-title">Projets Réalisés</div>
+                        <div class="projects">
+                            <div class="project">
+                                <div class="project-name">Système Microfinance</div>
+                                <div>Laravel, PHP, MySQL</div>
                             </div>
-
-                            <div class="section">
-                                <div class="section-title">PROJETS RÉALISÉS</div>
-                                <div class="projects">
-                                    <div class="project">
-                                        <div class="project-name">Système de Gestion de Microfinance</div>
-                                        <div>Laravel, PHP, MySQL</div>
-                                    </div>
-                                    <div class="project">
-                                        <div class="project-name">Site E-commerce</div>
-                                        <div>Laravel, PHP, MySQL</div>
-                                    </div>
-                                    <div class="project">
-                                        <div class="project-name">MiniMarket App</div>
-                                        <div>Flutter, Dart, Firebase</div>
-                                    </div>
-                                    <div class="project">
-                                        <div class="project-name">ThirdLine Game</div>
-                                        <div>Flutter, Dart</div>
-                                    </div>
-                                </div>
+                            <div class="project">
+                                <div class="project-name">Site E-commerce</div>
+                                <div>Laravel, PHP, MySQL</div>
                             </div>
-                        </div>
-
-                        <div>
-                            <div class="section">
-                                <div class="section-title">COMPÉTENCES TECHNIQUES</div>
-                                <div class="skills-grid">
-                                    <div class="skill-category">
-                                        <div class="skill-title">Développement Web</div>
-                                        <div class="skills">PHP, Laravel, Python, Flask, HTML/CSS/JS</div>
-                                    </div>
-                                    <div class="skill-category">
-                                        <div class="skill-title">Développement Mobile</div>
-                                        <div class="skills">Flutter, Dart, Applications Android</div>
-                                    </div>
-                                    <div class="skill-category">
-                                        <div class="skill-title">Bases de Données</div>
-                                        <div class="skills">MySQL, Odoo Community, Conception BDD</div>
-                                    </div>
-                                    <div class="skill-category">
-                                        <div class="skill-title">Langages</div>
-                                        <div class="skills">Java, C, Python, PHP</div>
-                                    </div>
-                                    <div class="skill-category">
-                                        <div class="skill-title">Analyse & Conception</div>
-                                        <div class="skills">Merise, UML, Systèmes d'Information</div>
-                                    </div>
-                                    <div class="skill-category">
-                                        <div class="skill-title">Design</div>
-                                        <div class="skills">Figma, UI/UX Design</div>
-                                    </div>
-                                </div>
+                            <div class="project">
+                                <div class="project-name">MiniMarket App</div>
+                                <div>Flutter, Dart, Firebase</div>
                             </div>
-
-                            <div class="section">
-                                <div class="section-title">ACTIVITÉS EXTRACURRICULAIRES</div>
-                                <div class="item">
-                                    <div class="item-title">Club de Génie en Herbe IAI</div>
-                                    <div class="item-desc">Responsable du club - BAPTISMUS, Génie Campus</div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-title">Club d'Art Oratoire</div>
-                                    <div class="item-desc">Concours universitaire, Orathon Génie des lycées</div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-title">Groupes Organisés</div>
-                                    <div class="item-desc">Membre LGD et Holystar</div>
-                                </div>
+                            <div class="project">
+                                <div class="project-name">ThirdLine Game</div>
+                                <div>Flutter, Dart</div>
                             </div>
                         </div>
                     </div>
-                </body>
-                </html>
+                </div>
+
+                <div>
+                    <div class="section">
+                        <div class="section-title">Compétences Techniques</div>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <div class="skill-title">Développement Web</div>
+                                <div class="skills">PHP, Laravel, Python, Flask, HTML/CSS/JavaScript</div>
+                            </div>
+                            <div class="skill-category">
+                                <div class="skill-title">Développement Mobile</div>
+                                <div class="skills">Flutter, Dart, Applications Android</div>
+                            </div>
+                            <div class="skill-category">
+                                <div class="skill-title">Bases de Données</div>
+                                <div class="skills">MySQL, Odoo Community, Conception BDD</div>
+                            </div>
+                            <div class="skill-category">
+                                <div class="skill-title">Langages</div>
+                                <div class="skills">Java, C, Python, PHP</div>
+                            </div>
+                            <div class="skill-category">
+                                <div class="skill-title">Analyse & Conception</div>
+                                <div class="skills">Merise, UML, Systèmes d'Information</div>
+                            </div>
+                            <div class="skill-category">
+                                <div class="skill-title">Design</div>
+                                <div class="skills">Figma, UI/UX Design</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Langues</div>
+                        <div class="item">
+                            <div class="item-title">Français</div>
+                            <div class="item-desc">Courant</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title">Anglais</div>
+                            <div class="item-desc">Intermédiaire</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title">Ewé</div>
+                            <div class="item-desc">Langue maternelle</div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Activités Extracurriculaires</div>
+                        <div class="item">
+                            <div class="item-title">Club de Génie en Herbe IAI</div>
+                            <div class="item-desc">Responsable du club</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title">Club d'Art Oratoire</div>
+                            <div class="item-desc">Concours universitaire</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title">Groupes Organisés</div>
+                            <div class="item-desc">Membre LGD et Holystar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
             `;
 
             // Create a new window for PDF generation
