@@ -687,17 +687,18 @@
 
         .social-links {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .social-links a {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: var(--gradient);
             color: white;
             border-radius: 50%;
@@ -765,7 +766,7 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .hero h1 {
                 font-size: 2.2rem;
             }
@@ -846,6 +847,14 @@
             opacity: 0;
             cursor: pointer;
         }
+        .social-links {
+        gap: 10px;
+    }
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
     </style>
 </head>
 <body>
