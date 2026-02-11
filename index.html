@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de LAWADAN KODJO WULFRED - Développeur Full-Stack & Analyste de Données">
+    <meta name="keywords" content="développeur, full-stack, Java, Spring Boot, Angular, Laravel, Flutter">
+    <meta name="author" content="LAWADAN KODJO WULFRED GOMESE ELOM">
+    
+    <title>LAWADAN KODJO WULFRED - Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Cursor Followers -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo-text">WALASS</span>
+                <span class="logo-dot">.</span>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#experience" class="nav-link">Parcours</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <button class="btn-download" id="downloadCV">
+                <i class="fas fa-download"></i>
+                <span>Télécharger CV</span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="profile-wrapper">
+                    <div class="profile-image-container">
+                        <img src="imageptfl.jpg" alt="LAWADAN KODJO WULFRED" class="profile-image">
+                        <div class="profile-ring"></div>
+                        <div class="profile-ring-2"></div>
+                    </div>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-small">Bonjour, je suis</span>
+                    <span class="title-main gradient-text">LAWADAN KODJO WULFRED</span>
+                    <span class="title-sub">GOMESE ELOM</span>
+                </h1>
+                
+                <div class="typing-container">
+                    <span class="typing-prefix">Je suis </span>
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+                
+                <p class="hero-description">
+                    Développeur Full-Stack passionné avec une expertise en systèmes d'information,
+                    bases de données et développement d'applications web et mobile innovantes.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Voir mes projets</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Me contacter</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="social-links-hero">
+                    <a href="https://github.com/CpasWalass" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/walass-lawadan-15716b217" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="/cdn-cgi/l/email-protection#4334222f2230302f22342227222d03242e222a2f6d202c2e" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@cpaswalass" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Qui suis-je ?</span>
+                <h2 class="section-title">À propos de moi</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p class="lead">
+                        Étudiant en 3ème année à l'Institut Africain d'Informatique, je suis passionné 
+                        par le développement logiciel et la création de solutions technologiques innovantes.
+                    </p>
+                    
+                    <p>
+                        Mon parcours m'a permis d'acquérir une solide expertise en développement Full-Stack,
+                        de la conception d'architectures logicielles robustes à la création d'interfaces
+                        utilisateur modernes et intuitives.
+                    </p>
+                    
+                    <p>
+                        Je m'épanouis dans la résolution de problèmes complexes et j'aime transformer
+                        des idées en applications fonctionnelles qui apportent une réelle valeur ajoutée.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projets Réalisés</span>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Années d'Études</span>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Technologies Maîtrisées</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="code-snippet">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-title">developer.java</span>
+                        </div>
+                        <div class="code-body">
+<pre><code><span class="keyword">public class</span> <span class="class">Developer</span> {
+    <span class="keyword">private</span> String name = <span class="string">"Walass"</span>;
+    <span class="keyword">private</span> String[] skills = {
+        <span class="string">"Java"</span>, <span class="string">"Spring Boot"</span>,
+        <span class="string">"Python"</span>, <span class="string">"Angular"</span>,
+        <span class="string">"Flutter"</span>, <span class="string">"Laravel"</span>
+    };
+    
+    <span class="keyword">public void</span> <span class="function">code</span>() {
+        <span class="keyword">while</span> (passion == <span class="keyword">true</span>) {
+            learn();
+            build();
+            innovate();
+        }
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Mes compétences</span>
+                <h2 class="section-title">Technologies & Expertises</h2>
+            </div>
+            
+            <div class="skills-container">
+                <!-- Backend -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend Development</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python / Flask</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java / Spring Boot</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PHP / Laravel</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js / Express</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frontend -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-header">
+                        <i class="fas fa-palette"></i>
+                        <h3>Frontend Development</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Angular</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">HTML / CSS / JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">TypeScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Bootstrap / Tailwind</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Flutter / Dart</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Android (Java)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Responsive Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Database -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Bases de Données</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">MySQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Oracle / PL/SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL Server / T-SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PostgreSQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firebase</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Others -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Outils & Méthodologies</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Merise</span>
+                        <span class="skill-tag">UML</span>
+                        <span class="skill-tag">Agile / Scrum</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Odoo ERP</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">IntelliJ IDEA</span>
+                    </div>
+                </div>
+                
+                <!-- AI/ML -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="550">
+                    <div class="skill-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Intelligence Artificielle & Vision</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Image Processing</span>
+                        <span class="skill-tag">Object Detection</span>
+                        <span class="skill-tag">Machine Learning</span>
+                    </div>
+                </div>
+                
+                <!-- Languages -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-header">
+                        <i class="fas fa-language"></i>
+                        <h3>Langues</h3>
+                    </div>
+                    <div class="language-items">
+                        <div class="language-item">
+                            <span class="language-name">Français</span>
+                            <div class="language-level">
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <span class="language-text">Courant</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">Anglais</span>
+                            <div class="language-level">
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                                <i class="far fa-circle"></i>
+                                <i class="far fa-circle"></i>
+                            </div>
+                            <span class="language-text">Intermédiaire</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">Ewé</span>
+                            <div class="language-level">
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <span class="language-text">Langue maternelle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Mon travail</span>
+                <h2 class="section-title">Projets Réalisés</h2>
+            </div>
+            
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Mon parcours</span>
+                <h2 class="section-title">Formation & Expérience</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">En cours</span>
+                        <h3>3ème Année - Institut Africain d'Informatique</h3>
+                        <p>
+                            Renforcement des compétences en développement d'applications distribuées,
+                            gestion de bases de données complexes et conception d'architectures logicielles
+                            orientées services (client-serveur, API, microservices).
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Juin - Août 2025</span>
+                        <h3>Stage - Développeur Full-Stack</h3>
+                        <p class="timeline-company">Groupe Atakora SARL</p>
+                        <p>
+                            Développement d'un système modulaire complet de gestion de microfinance en Laravel.
+                            Conception et implémentation d'une architecture robuste pour la gestion des clients,
+                            des prêts et des transactions financières.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - 2025</span>
+                        <h3>2ème Année - Institut Africain d'Informatique</h3>
+                        <p>
+                            Approfondissement des connaissances en développement logiciel, bases de données avancées,
+                            conception de systèmes d'information avec Merise et UML.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2024</span>
+                        <h3>1ère Année - Institut Africain d'Informatique</h3>
+                        <p>
+                            Fondamentaux de la programmation, introduction aux bases de données,
+                            algorithmique et structures de données.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023</span>
+                        <h3>Baccalauréat Série D</h3>
+                        <p>
+                            Obtention du baccalauréat série D avec une solide base en mathématiques
+                            et sciences physiques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activities -->
+            <div class="activities-section" data-aos="fade-up">
+                <h3 class="activities-title">Activités Extracurriculaires</h3>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Club de Génie en Herbe IAI</h4>
+                        <p>Responsable du club - Animation et organisation des activités intellectuelles</p>
+                        <ul>
+                            <li>Participation à BAPTISMUS</li>
+                            <li>Génie Campus (compétitions AGH)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <i class="fas fa-microphone"></i>
+                        <h4>Club d'Art Oratoire</h4>
+                        <p>Responsable du Club - Développement et transmission des compétences en expression orale</p>
+                        <ul>
+                            <li>Concours universitaire JCI</li>
+                            <li>Orathon Génie des lycées(2 editions)</li>
+                            <li>La Voix de L'influence Positive</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Groupes Organisés</h4>
+                        <p>Engagement communautaire et développement personnel</p>
+                        <ul>
+                            <li>Membre du groupe LGD</li>
+                            <li>Membre du groupe Holystar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Restons en contact</span>
+                <h2 class="section-title">Contactez-moi</h2>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <p class="contact-intro">
+                        Passionné par les nouvelles technologies et toujours à la recherche de nouveaux défis.
+                        N'hésitez pas à me contacter pour des opportunités de collaboration ou simplement pour échanger !
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:Wulfredlawadan@gmail.com">Wulfredlawadan@gmail.com</a>
+                                <a href="mailto:walass.lawadan@etu.iai-togo.tg">walass.lawadan@etu.iai-togo.tg</a>
+                    
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <a href="tel:+22898820081">+228 98 82 00 81</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Localisation</h4>
+                                <p>Lomé, Togo</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/CpasWalass" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/walass-lawadan-15716b217" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@cpaswalass" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-visual" data-aos="fade-left">
+                    <div class="contact-illustration">
+                        <img src="assets/images/identite (2).png" alt="Illustration de contact">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 LAWADAN KODJO WULFRED GOMESE ELOM. Tous droits réservés.</p>
+            <p class="footer-sub">Conçu et développé avec <i class="fas fa-heart"></i> par Walass</p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Your JavaScript files -->
+    <script src="projects-data.js"></script>
+    <script src="script.js"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+</body>
+</html>
+    
