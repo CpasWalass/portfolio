@@ -70,7 +70,7 @@ const projects = [
         description: "Plateforme e-commerce complète avec gestion des produits, panier d'achat, système de paiement et interface d'administration avancée.",
         category: "web",
         technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "Stripe"],
-        image: "assets/images/project-5.svg",
+        image: "assets/images/ecommerceimg.jpg",
         color: "#27ae60",
         link: "https://github.com/CpasWalass/ecommerce2",
         features: [
@@ -86,7 +86,7 @@ const projects = [
         description: "Application mobile de commerce avec géolocalisation permettant l'achat et la vente de produits localement.",
         category: "mobile",
         technologies: ["Flutter", "Dart", "Firebase", "Google Maps API"],
-        image: "assets/images/project-6.svg",
+        image: "assets/images/ecommerceimg.jpg",
         color: "#f39c12",
         link: "https://github.com/CpasWalass/minimarket",
         features: [
@@ -106,7 +106,7 @@ const projects = [
         color: "#16a085",
         link: "https://github.com/CpasWalass/GestionSalleSport",
         features: [
-            "Gestion des membres",
+            "Gestion des membres", 
             "Suivi des abonnements",
             "Statistiques détaillées",
             "Interface graphique Swing"
